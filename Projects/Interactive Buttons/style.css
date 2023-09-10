@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 33% 33% 33%;
+    height: 100vh;
+    background-color: rgb(27,28,30);
+}
+
+button{
+    display: grid;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+button:hover{
+    background-color: rgb(51 ,51, 60);
+}
+
+button:after{
+    content:  " ";
+    width: 0px;
+    background-color: rgba(144, 192, 13, 0.3);
+    z-index: -1;
+    height: 0px;
+    border-radius: 90%;
+    position: absolute;
+    transition: 0.3s;
+}
+
+button:active::after{
+    width: 200px;
+    height: 200px;
+}
+
+.animateFromRight::after{
+    right: -200px;
+    width: 200px;
+    height: 200px;
+}
+
+.animateFromRight:active::after{
+    right:0px;
+}
+
+.animateFromLeft::after{
+    width:200px;
+    height:200px;
+    left:-200px;
+}
+.animateFromLeft:active::after{
+    left:0px;
+}
+
